@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+float damage_health(int health, float damage) {
+    return (float) health - damage * (float)health;
+}
+
 int main(void) {
     printf("Hello, World!\n");
     int max_x = 0;
@@ -13,5 +17,6 @@ int main(void) {
 
     const int max_health = 100;
     printf("max_health = %d\n", max_health);
+    printf("health after damage: %f\n", damage_health(max_health, health_damage_percentage));
     return 0;
 }
