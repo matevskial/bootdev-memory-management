@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "headerexample/headerexample.h"
 
 float damage_health(int health, float damage) {
     return (float) health - damage * (float)health;
@@ -18,5 +19,6 @@ int main(void) {
     const int max_health = 100;
     printf("max_health = %d\n", max_health);
     printf("health after damage: %f\n", damage_health(max_health, health_damage_percentage));
+    printf("get_string value from header function: %s\n", get_string(1));
     return 0;
 }
