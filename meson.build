@@ -3,9 +3,10 @@ project('bootdev-memory-management', 'c',
         default_options : ['warning_level=3', 'c_std=c89'])
 
 subdir('headerexample')
+subdir('structexample')
 
-sources = ['main.c'] + headerexample_sources
-includes = [headerexample_inc]
+sources = ['main.c'] + headerexample_sources + structexample_sources
+includes = [headerexample_inc, structexample_inc]
 
 bootdev_memory_management = executable(
         'bootdev_memory_management',

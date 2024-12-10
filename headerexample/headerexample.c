@@ -1,4 +1,4 @@
-#include "headerexample.h";
+#include "headerexample.h"
 
 char* get_string(int type) {
     if (type == 1) {

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "headerexample/headerexample.h"
+#include "structexample/structexample.h"
 
 float damage_health(int health, float damage) {
     return (float) health - damage * (float)health;
@@ -38,5 +39,14 @@ int main(void) {
         int local_var = 6;
         printf("local_var in do while = %d\n", local_var);
     } while (0);
+
+    struct MyStruct zero = get_mystruct_zero_initializer();
+    printf("mystruct zero name: %s\n", zero.name);
+
+    struct MyStruct positional = get_mystruct_positional_initializer("positional", 22);
+    printf("mystruct positional name: %s\n", positional.name);
+
+    struct MyStruct designated = get_mystruct_designated_initializer("designated", 22);
+    printf("mystruct designated name: %s\n", designated.name);
     return 0;
 }
