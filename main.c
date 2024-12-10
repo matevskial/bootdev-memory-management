@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "headerexample/headerexample.h"
 
 float damage_health(int health, float damage) {
@@ -20,5 +21,16 @@ int main(void) {
     printf("max_health = %d\n", max_health);
     printf("health after damage: %f\n", damage_health(max_health, health_damage_percentage));
     printf("get_string value from header function: %s\n", get_string(1));
+
+    printf("sizes of data types are not same on every cpu platform\n");
+    printf("size of int: %zu\n", sizeof(int));
+    printf("size of long long: %zu\n", sizeof(long long));
+    printf("size of unsigned long: %zu\n", sizeof(unsigned long));
+    printf("size of float: %zu\n", sizeof(float));
+    printf("size of double: %zu\n", sizeof(double));
+    printf("size of long double: %zu\n", sizeof(long double));
+    printf("size of char: %zu\n", sizeof(char));
+    printf("size of bool: %zu\n", sizeof(bool));
+    printf("size of size_t: %zu\n", sizeof(size_t));
     return 0;
 }
