@@ -10,5 +10,8 @@ int main(void) {
     printf("dir = %c\n", dir);
     printf("health_damage_percentage = %f\n", health_damage_percentage);
     printf("banner_text = %s\n", banner_text);
+
+    const int max_health = 100;
+    printf("max_health = %d\n", max_health);
     return 0;
 }
