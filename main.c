@@ -32,5 +32,11 @@ int main(void) {
     printf("size of char: %zu\n", sizeof(char));
     printf("size of bool: %zu\n", sizeof(bool));
     printf("size of size_t: %zu\n", sizeof(size_t));
+
+    printf("IT is possible to create a \"block of code\" or \"scope\" in C using do { } while(0)");
+    do {
+        int local_var = 6;
+        printf("local_var in do while = %d\n", local_var);
+    } while (0);
     return 0;
 }
