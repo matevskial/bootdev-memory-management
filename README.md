@@ -25,3 +25,10 @@ sizeof(ptr)
 int arr[10];
 sizeof(arr);
 ```
+
+Arrays decay to pointer when:
+
+* passing to function
+* using pointer arithmetics such as `int *ptr = arr` or `int value = *(arr + 2)`
+
+There exists a "pointer to array", or pointer to "not decayed" array, which is different than pointer to first element
