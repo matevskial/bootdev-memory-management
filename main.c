@@ -46,7 +46,10 @@ int main(void) {
     struct MyStruct positional = get_mystruct_positional_initializer("positional", 22);
     printf("mystruct positional name: %s\n", positional.name);
 
-    struct MyStruct designated = get_mystruct_designated_initializer("designated", 22);
+    my_struct_t designated = get_mystruct_designated_initializer("designated", 22);
     printf("mystruct designated name: %s\n", designated.name);
+
+    my_struct_t *designstedPointer = &designated;
+    printf("mystruct printed with pointer name: %s\n", designstedPointer->name);
     return 0;
 }
