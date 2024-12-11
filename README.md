@@ -14,3 +14,14 @@ int *ptr = (int *) arr;
 ```
 
 then iterating over this array would print all int values(what-ever is in each sizeof(int) block of memory)
+
+Note about sizeof of array and pointer
+```c
+// this always returns platform-depentend size
+int *ptr = &some_var
+sizeof(ptr)
+
+// this returns actual size of array
+int arr[10];
+sizeof(arr);
+```
