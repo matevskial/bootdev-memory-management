@@ -54,5 +54,18 @@ int main(void) {
 
     char str1[] = "Hii";
     printf("size of str1: %zu\n. Here str1 is NOT decayed to pointer.", sizeof(str1));
+
+    printf("size of the c string literal \"abc\": %zu\n", sizeof("abc"));
+
+    char a[10] = "abc";
+    char *b = "abcd";
+    printf("size of a: %zu\n", sizeof(a));
+    printf("size of b: %zu\n", sizeof(b));
+
+    my_buffer_t my_buffer = make_my_buffer();
+    my_buffer_t *my_buffer_p = &my_buffer;
+    printf("size of buffer's internal buff: %zu\n", sizeof(my_buffer.buff));
+    printf("size of buffer's internal buff, from pointer: %zu\n", sizeof(my_buffer_p->buff));
+    printf("print out some stuff from buffer's internal buff: %c\n", my_buffer.buff[2]);
     return 0;
 }

@@ -17,3 +17,10 @@ struct MyStruct get_mystruct_designated_initializer(char *name, int age) {
     };
     return my_struct;
 }
+
+my_buffer_t make_my_buffer() {
+    my_buffer_t buffer = {
+        .buff = "abc"
+    };
+    return buffer;
+}
