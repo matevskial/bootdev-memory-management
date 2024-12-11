@@ -1,6 +1,6 @@
 project('bootdev-memory-management', 'c',
         version : '1.0.0',
-        default_options : ['warning_level=3', 'c_std=c89'])
+        default_options : ['warning_level=3', 'c_std=c99'])
 
 subdir('headerexample')
 subdir('structexample')

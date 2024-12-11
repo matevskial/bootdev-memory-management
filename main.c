@@ -1,10 +1,43 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
+
 #include "headerexample/headerexample.h"
 #include "structexample/structexample.h"
 
 float damage_health(int health, float damage) {
     return (float) health - damage * (float)health;
+}
+
+int contains_null_terminator(char * buff, int max_size) {
+    for (int i = 0; i < max_size; i++) {
+        if (buff[i] == '\0') {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+void initialize_buff(char * buff, int max_size) {
+    for (int i = 0; i < max_size; i++) {
+        buff[i] = 'p';
+    }
+}
+
+void initialize_buff_c(char * buff, int max_size, char c) {
+    for (int i = 0; i < max_size; i++) {
+        buff[i] = c;
+    }
+}
+
+void initialize_buff_with_null_termination_at(char * buff, int max_size, int position_of_null_termination) {
+    for (int i = 0; i < max_size; i++) {
+        if (i == position_of_null_termination) {
+            buff[i] = '\0';
+        } else {
+            buff[i] = 'p';
+        }
+    }
 }
 
 int main(void) {
@@ -67,5 +100,23 @@ int main(void) {
     printf("size of buffer's internal buff: %zu\n", sizeof(my_buffer.buff));
     printf("size of buffer's internal buff, from pointer: %zu\n", sizeof(my_buffer_p->buff));
     printf("print out some stuff from buffer's internal buff: %c\n", my_buffer.buff[2]);
+
+    char *src = "abcd";
+    char dest[10];
+    initialize_buff(dest, 10);
+    strcpy(dest, src);
+    printf("does strcpy put a null terminator? %d\n", contains_null_terminator(dest, 10));
+
+    initialize_buff(dest, 10);
+    strncpy(dest, src, 2);
+    printf("does strncpy put a null terminator? %d\n", contains_null_terminator(dest, 10));
+
+    initialize_buff_with_null_termination_at(dest, 10, 3);
+    strcat(dest, src);
+    printf("does strcat put a null terminator? %d\n", contains_null_terminator(dest, 10));
+
+    initialize_buff_with_null_termination_at(dest, 10, 3);
+    strncat(dest, src, 2);
+    printf("does strncat put a null terminator? %d\n", contains_null_terminator(dest, 10));
     return 0;
 }

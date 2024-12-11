@@ -42,3 +42,8 @@ C strings are:
 `char first[50] = "Snek";` is array of chars of 50 elements but adds '\0' after the char 'k'.
 
 Undefined behavior may happen when C string library work with char* that are not null-terminated.
+
+`strcpy`, `strcat` and `strncat` add '\0' after operation: `strcpy` needs source to end with '\0', `strcat` needs both source and destination
+to end with '\0', `strncat` needs at least destination to end with '\0'.
+
+`strncpy` does not add '\0' after operation
