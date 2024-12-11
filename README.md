@@ -32,3 +32,13 @@ Arrays decay to pointer when:
 * using pointer arithmetics such as `int *ptr = arr` or `int value = *(arr + 2)`
 
 There exists a "pointer to array", or pointer to "not decayed" array, which is different than pointer to first element
+
+C strings are:
+
+* How we represent text in C programs
+* Any number of characters (chars) terminated by a null character ('\0').
+* A pointer to the first element of a character array.
+
+`char first[50] = "Snek";` is array of chars of 50 elements but adds '\0' after the char 'k'.
+
+Undefined behavior may happen when C string library work with char* that are not null-terminated.

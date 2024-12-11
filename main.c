@@ -51,5 +51,8 @@ int main(void) {
 
     my_struct_t *designstedPointer = &designated;
     printf("mystruct printed with pointer name: %s\n", designstedPointer->name);
+
+    char str1[] = "Hii";
+    printf("size of str1: %zu\n. Here str1 is NOT decayed to pointer.", sizeof(str1));
     return 0;
 }
