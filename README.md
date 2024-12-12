@@ -47,3 +47,29 @@ Undefined behavior may happen when C string library work with char* that are not
 to end with '\0', `strncat` needs at least destination to end with '\0'.
 
 `strncpy` does not add '\0' after operation
+
+Forward declarations are used for self-referencing or circular referencing of types in structs:
+
+```c
+typedef struct Computer computer_t;
+typedef struct Person person_t;
+
+struct Person {
+  char *name;
+  computer_t *computer;
+};
+
+struct Computer {
+  char *brand;
+  person_t *owner;
+};
+```
+
+This is how to return new struct
+
+```c
+return (my_struct_t){
+  .name = "abc",
+  .age = 230
+};
+```
