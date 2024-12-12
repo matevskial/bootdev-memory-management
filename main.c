@@ -4,6 +4,7 @@
 
 #include "headerexample/headerexample.h"
 #include "structexample/structexample.h"
+#include "unionexample/unionexample.h"
 
 float damage_health(int health, float damage) {
     return (float) health - damage * (float)health;
@@ -118,5 +119,11 @@ int main(void) {
     initialize_buff_with_null_termination_at(dest, 10, 3);
     strncat(dest, src, 2);
     printf("does strncat put a null terminator? %d\n", contains_null_terminator(dest, 10));
+
+    int_or_char_array_t union_with_char_array;
+    printf("sizeof union_with_char_array: %zu\n", sizeof(union_with_char_array));
+
+    int_or_char_pointer_t union_with_char_pointer;
+    printf("sizeof union_with_char_pointer: %zu\n", sizeof(union_with_char_pointer));
     return 0;
 }

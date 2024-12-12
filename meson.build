@@ -4,9 +4,10 @@ project('bootdev-memory-management', 'c',
 
 subdir('headerexample')
 subdir('structexample')
+subdir('unionexample')
 
-sources = ['main.c'] + headerexample_sources + structexample_sources
-includes = [headerexample_inc, structexample_inc]
+sources = ['main.c'] + headerexample_sources + structexample_sources + unionexample_sources
+includes = [headerexample_inc, structexample_inc, unionexample_inc]
 
 bootdev_memory_management = executable(
         'bootdev_memory_management',

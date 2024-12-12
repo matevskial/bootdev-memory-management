@@ -73,3 +73,5 @@ return (my_struct_t){
   .age = 230
 };
 ```
+
+Padding is added for unions too, see `unionexample/unionexample.h`
