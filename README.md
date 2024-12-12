@@ -75,3 +75,16 @@ return (my_struct_t){
 ```
 
 Padding is added for unions too, see `unionexample/unionexample.h`
+
+
+Use `current_sp = __builtin_frame_address(0);` to get current stack pointer.
+
+Below would make callers of new_coord to access deallocated memory if accessing the memory through the pointer returned from function.
+```c
+coord_t *new_coord(int x, int y) {
+  coord_t c;
+  c.x = x;
+  c.y = y;
+  return &c;
+}
+```
