@@ -88,3 +88,5 @@ coord_t *new_coord(int x, int y) {
   return &c;
 }
 ```
+
+int can be casted to void*
