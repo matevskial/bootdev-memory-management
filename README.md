@@ -1,4 +1,4 @@
-# Bootdev memory management course notes and example code
+# Bootdev memory management course notes and various example C code outside bootdev for leearning C
 
 Struct layouts in memory(fields plus padding) depend on compiler and system architecture.
 
